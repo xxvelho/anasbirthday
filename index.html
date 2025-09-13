@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convite</title>
+<meta name="description" content="Convite especial para o aniversário de 21 anos da Ana Beatriz. Festa no dia 27 de setembro de 2025. Celebre conosco!">
+<meta name="keywords" content="aniversário ana beatriz, festa 21 anos, convite aniversário, birthday party, festa setembro 2025">
+<meta name="author" content="Ana Beatriz">
+<meta property="og:title" content="Aniversário Ana Beatriz - 21 Anos">
+<meta property="og:description" content="Você está convidado para celebrar os 21 anos da Ana Beatriz! Festa dia 27 de setembro às 18:30.">
+<style>
+  :root{
+    --bg:#0f0f10; --fg:#f2f2f2; --muted:#e7e7e7; --accent:#d21f3c;
+    --serif: Georgia,"Times New Roman",Times,serif;
+    --sans: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;min-height:100vh}
+  body{
+    margin:0;background:var(--bg);color:var(--fg);
+    display:grid;place-items:center;
+    overflow:hidden;font-family:var(--sans);
+    padding:clamp(8px,2vw,16px)
+  }
+  main{
+    position:relative;width:100%;height:100%;
+    display:grid;place-items:center;
+    min-height:calc(100vh - clamp(16px,4vw,32px))
+  }
+  section{
+    position:absolute;inset:0;display:grid;place-items:center;
+    padding:clamp(16px,4vw,24px);text-align:center;
+    opacity:0;transform:scale(.985);
+    transition:opacity .5s ease,transform .5s ease;
+    pointer-events:none;
+    width:100%;height:100%;
+    overflow-y:auto;overflow-x:hidden
+  }
+  #capa{opacity:1;transform:none;pointer-events:auto}
+  #convite:target{opacity:1;transform:none;pointer-events:auto}
+  #convite:target~#capa{opacity:0;pointer-events:none;transform:scale(1.015)}
+  #presentes:target{opacity:1;transform:none;pointer-events:auto}
+  #presentes:target~#capa{opacity:0;pointer-events:none;transform:scale(1.015)}
+
+  .cover{
+    width:min(94vw,500px);position:relative;display:grid;gap:clamp(12px,3vw,16px);
+    justify-items:center;align-items:center
+  }
+  .cover h2,.cover p{font-family:var(--serif);margin:0;color:var(--muted)}
+  .cover h2{
+    font-size:clamp(17px,3.7vw,27px);font-weight:400;
+    text-align:center;word-wrap:break-word
+  }
+  .cover p{
+    font-size:clamp(14px,3.2vw,21px);
+    text-align:center;word-wrap:break-word
+  }
+  .cover img{
+    width:100%;max-width:450px;height:auto;border-radius:12px;
+    box-shadow:0 12px 40px rgba(0,0,0,.55);display:block
+  }
+  .seal{
+    position:absolute;left:50%;top:50%;
+    translate:-50% -28%;
+    width:clamp(60px,15vw,110px);aspect-ratio:1/1;border-radius:999px;
+    text-indent:-9999px;overflow:hidden;cursor:pointer;outline:none;border:0;background:transparent;
+    min-width:60px;min-height:60px
+  }
+  .seal:focus-visible{box-shadow:0 0 0 3px #ffffff80,0 0 0 6px #e11d48aa}
+
+  .card{
+    width:min(94vw,540px);max-width:540px;
+    background:#121212;border-radius:14px;
+    box-shadow:0 14px 44px rgba(0,0,0,.55);
+    padding:clamp(18px,4.5vw,36px);
+    display:grid;grid-template-rows:auto auto 1fr auto;
+    gap:clamp(8px,2.5vw,14px);
+    margin:clamp(8px,2vw,16px);
+    justify-items:center;text-align:center
+  }
+  .card small{
+    font-family:var(--serif);color:var(--muted);
+    font-size:clamp(14px,3.2vw,19px);text-align:center
+  }
+  .title{
+    position:relative;
+    padding-top:clamp(4px,1.5vw,8px);
+    padding-bottom:clamp(8px,2.5vw,16px);
+    width:100%;display:flex;flex-direction:column;align-items:center
+  }
+  .birthday{
+    margin:0;line-height:1;letter-spacing:.28em;
+    font-weight:700;font-size:clamp(29px,7.9vw,80px);
+    text-align:center;white-space:nowrap;width:100%;
+    overflow:visible
+  }
+  .party{
+    position:absolute;left:50%;top:80%;translate:-48% -50%;
+    margin:0;color:var(--accent);
+    font-family:"Brush Script MT","Segoe Script","Comic Sans MS",cursive;
+    font-size:clamp(45px,9.5vw,85px);font-weight:400;white-space:nowrap;
+    text-align:center
+  }
+  .subtitle{
+    margin:clamp(8px,2.8vw,14px) 0 0;
+    font-family:var(--serif);color:var(--muted);
+    font-size:clamp(17px,4vw,25px);line-height:1.6;
+    text-align:center;word-wrap:break-word
+  }
+  .details{
+    display:grid;gap:.4rem;justify-items:center;
+    margin-top:clamp(14px,3.5vw,28px);
+    font-family:var(--serif);font-size:clamp(15px,3.4vw,19px);color:#eee;
+    text-align:center;width:100%
+  }
+  .details div{
+    word-wrap:break-word;text-align:center;width:100%
+  }
+  .actions{
+    margin-top:clamp(10px,2.8vw,16px);
+    width:100%;display:flex;justify-content:center;gap:clamp(8px,2vw,12px);
+    flex-wrap:wrap
+  }
+  .btn{
+    display:inline-block;padding:clamp(8px,2.5vw,12px) clamp(12px,3.5vw,16px);
+    border-radius:10px;background:#1a1a1b;border:1px solid #ffffff30;
+    color:#fff;text-decoration:none;font-size:clamp(15px,3.2vw,17px);
+    text-align:center;min-width:80px
+  }
+  .btn:hover{border-color:#ffffff70}
+  .btn:focus-visible{outline:3px solid #ffffff80}
+
+  .gift-card{
+    width:min(94vw,540px);max-width:540px;
+    background:#121212;border-radius:14px;
+    box-shadow:0 14px 44px rgba(0,0,0,.55);
+    padding:clamp(18px,4.5vw,36px);
+    display:grid;gap:clamp(16px,3.5vw,24px);
+    margin:clamp(8px,2vw,16px);
+    justify-items:center;text-align:center
+  }
+  .gift-title{
+    margin:0;font-family:var(--serif);
+    font-size:clamp(24px,5.5vw,36px);color:var(--accent);
+    font-weight:400;text-align:center
+  }
+  .gift-subtitle{
+    margin:0;font-family:var(--serif);color:var(--muted);
+    font-size:clamp(16px,3.8vw,22px);line-height:1.6;
+    text-align:center;word-wrap:break-word
+  }
+  .gift-icon{
+    font-size:clamp(40px,8vw,60px);color:var(--accent);
+    margin:clamp(8px,2vw,12px) 0
+  }
+  .gift-actions{
+    display:flex;flex-direction:column;gap:clamp(12px,3vw,16px);
+    width:100%;align-items:center
+  }
+  .btn-gift{
+    display:inline-block;padding:clamp(12px,3vw,16px) clamp(16px,4vw,24px);
+    border-radius:12px;background:var(--accent);border:none;
+    color:#fff;text-decoration:none;font-size:clamp(16px,3.5vw,18px);
+    text-align:center;min-width:200px;font-weight:500;
+    transition:background .3s ease,transform .2s ease
+  }
+  .btn-gift:hover{background:#b71c34;transform:translateY(-2px)}
+  .btn-gift:focus-visible{outline:3px solid #ffffff80}
+  .btn-secondary{
+    background:#1a1a1b;border:1px solid #ffffff30;color:#fff;
+    font-size:clamp(15px,3.2vw,17px);padding:clamp(10px,2.8vw,14px) clamp(14px,3.8vw,18px)
+  }
+  .btn-secondary:hover{border-color:#ffffff70;background:#252525}
+
+  @media (max-width: 480px) {
+    .birthday{letter-spacing:.15em;font-size:clamp(25px,6.8vw,80px)}
+    .party{white-space:nowrap;max-width:none;font-size:clamp(40px,8.5vw,85px)}
+    .details{gap:.6rem}
+  }
+
+  @media (max-height: 600px) and (max-width: 480px) {
+    .title{padding-top:clamp(2px,1vw,4px);padding-bottom:clamp(4px,1.5vw,8px)}
+    .subtitle{margin:clamp(4px,1.5vw,8px) 0 0}
+    .details{margin-top:clamp(8px,2vw,14px)}
+    .actions{margin-top:clamp(6px,1.5vw,10px)}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    section{transition:none}
+  }
+</style>
+</head>
+<body>
+  <main>
+    <section id="convite" aria-label="Convite de aniversário">
+        <small>Você foi convidado para:</small>
+
+        <div class="title" aria-hidden="false">
+          <h1 class="birthday">B I R T H D A Y</h1>
+          <h2 class="party">party</h2>
+        </div>
+
+        <p class="subtitle">Te espero para comemorar<br>meus 21 anos!</p>
+
+        <div class="details" aria-label="Informações">
+          <div>Dia: <strong>27. 09. 2025</strong></div>
+          <div>Hora: <strong>18:30</strong></div>
+          <div>Local: <strong>Rua Dr. Mário Borges, 01 – Vila Ivar Saldanha</strong></div>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="#presentes">Lista de Presentes</a>
+          <a class="btn btn-secondary" href="#capa">Voltar</a>
+        </div>
+    </section>
+
+    <section id="presentes" aria-label="Lista de presentes">
+      <div class="gift-card">
+        <div class="gift-icon">🎁</div>
+        <h2 class="gift-title">Lista de Presentes</h2>
+        <p class="gift-subtitle">Sua presença já é o maior presente,<br>mas se quiser me mimar... 😊</p>
+        
+        <div class="gift-actions">
+          <a class="btn-gift" href="https://www.amazon.com.br/hz/wishlist/ls/OFP2BYNZQCIU?ref_=wl_share" target="_blank" rel="noopener">
+            Ver Lista na Amazon
+          </a>
+          <a class="btn btn-secondary" href="#convite">Voltar ao Convite</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="capa" aria-label="Envelope do convite">
+      <div class="cover">
+        <h2>Um convite para você</h2>
+        <img src="carta.png" alt="Envelope preto com selo de cera vermelho">
+        <a class="seal" href="#convite">Abrir convite</a>
+        <p>Toque no selo para abrir</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
