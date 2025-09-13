@@ -23,16 +23,16 @@
     margin:0;background:var(--bg);color:var(--fg);
     display:grid;place-items:center;
     overflow:hidden;font-family:var(--sans);
-    padding:clamp(8px,2vw,16px)
+    padding:0
   }
   main{
     position:relative;width:100%;height:100%;
     display:grid;place-items:center;
-    min-height:calc(100vh - clamp(16px,4vw,32px))
+    min-height:100vh
   }
   section{
     position:absolute;inset:0;display:grid;place-items:center;
-    padding:clamp(16px,4vw,24px);text-align:center;
+    padding:clamp(12px,3vw,20px);text-align:center;
     opacity:0;transform:scale(.985);
     transition:opacity .5s ease,transform .5s ease;
     pointer-events:none;
@@ -46,7 +46,7 @@
   #presentes:target~#capa{opacity:0;pointer-events:none;transform:scale(1.015)}
 
   .cover{
-    width:min(94vw,500px);position:relative;display:grid;gap:clamp(12px,3vw,16px);
+    width:min(98vw,500px);position:relative;display:grid;gap:clamp(12px,3vw,16px);
     justify-items:center;align-items:center
   }
   .cover h2,.cover p{font-family:var(--serif);margin:0;color:var(--muted)}
@@ -63,22 +63,22 @@
     box-shadow:0 12px 40px rgba(0,0,0,.55);display:block
   }
   .seal{
-    position:absolute;left:50%;top:50%;
-    translate:-50% -28%;
-    width:clamp(60px,15vw,110px);aspect-ratio:1/1;border-radius:999px;
+    position:absolute;left:50%;top:55%;
+    translate:-50% -20%;
+    width:clamp(88px,20vw,154px);aspect-ratio:1/1;border-radius:999px;
     text-indent:-9999px;overflow:hidden;cursor:pointer;outline:none;border:0;background:transparent;
-    min-width:60px;min-height:60px
+    min-width:88px;min-height:88px
   }
   .seal:focus-visible{box-shadow:0 0 0 3px #ffffff80,0 0 0 6px #e11d48aa}
 
   .card{
-    width:min(94vw,540px);max-width:540px;
+    width:min(98vw,540px);max-width:540px;
     background:#121212;border-radius:14px;
     box-shadow:0 14px 44px rgba(0,0,0,.55);
     padding:clamp(18px,4.5vw,36px);
     display:grid;grid-template-rows:auto auto 1fr auto;
     gap:clamp(8px,2.5vw,14px);
-    margin:clamp(8px,2vw,16px);
+    margin:0;
     justify-items:center;text-align:center
   }
   .card small{
@@ -134,12 +134,12 @@
   .btn:focus-visible{outline:3px solid #ffffff80}
 
   .gift-card{
-    width:min(94vw,540px);max-width:540px;
+    width:min(98vw,540px);max-width:540px;
     background:#121212;border-radius:14px;
     box-shadow:0 14px 44px rgba(0,0,0,.55);
     padding:clamp(18px,4.5vw,36px);
     display:grid;gap:clamp(16px,3.5vw,24px);
-    margin:clamp(8px,2vw,16px);
+    margin:0;
     justify-items:center;text-align:center
   }
   .gift-title{
@@ -176,6 +176,11 @@
   .btn-secondary:hover{border-color:#ffffff70;background:#252525}
 
   @media (max-width: 480px) {
+    body{padding:0}
+    section{padding:8px}
+    .cover{width:100%;margin:0;padding:0}
+    .card{width:100%;margin:0;border-radius:0;padding:clamp(16px,4vw,24px)}
+    .gift-card{width:100%;margin:0;border-radius:0;padding:clamp(16px,4vw,24px)}
     .birthday{letter-spacing:.15em;font-size:clamp(25px,6.8vw,80px)}
     .party{white-space:nowrap;max-width:none;font-size:clamp(40px,8.5vw,85px)}
     .details{gap:.6rem}
@@ -208,7 +213,7 @@
         <div class="details" aria-label="Informações">
           <div>Dia: <strong>27. 09. 2025</strong></div>
           <div>Hora: <strong>18:30</strong></div>
-          <div>Local: <strong>Rua Dr. Mário Borges, 01 – Vila Ivar Saldanha</strong></div>
+          <div>Local: <strong>Rua Dr. Mário Borges, 01 - Vila Ivar Saldanha</strong></div>
         </div>
 
         <div class="actions">
